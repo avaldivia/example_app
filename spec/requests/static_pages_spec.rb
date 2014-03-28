@@ -26,7 +26,7 @@ describe "Static pages" do   #describe las paginas estaticas
      before { visit root_path }  #pag 50 DAN 13
      it { should have_content('Sample App') }
      it { should have_title(full_title('')) }   # Se agrega en pag 54 DAN_13 junto con utilities.rb
-   #  it { should have_title("Ruby on Rails Tutorial Sample App") }
+   # it { should have_title("Ruby on Rails Tutorial Sample App") }
      it { should_not have_title('| Home') }
    end
 
