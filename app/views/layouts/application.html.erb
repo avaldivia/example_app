@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ruby on Rails Tutorial SampleApp | <%= yield(:title)%></title> <!--pagina 52 DAN_12 el tiulo lo pone cada vista a traves del metodo provide en dependecia en que pagina esté
+  <!-- pagina 52 DAN_12 el tiulo lo pone cada vista a traves del metodo provide en dependecia en que pagina esté -->
+  <title> <%= full_title(yield(:title)) %></title>
+
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+
+
+  <%= render 'layouts/shim' %> <!--1 pag 38 DAN13-->
+
+
+  <!--[if lt IE 9]>
+  <script  src="http://html5shim.googlecode.com/svn/trunk/html5.js"></scri<![endif]-->
+
 </head>
 <body>
 
-<%= yield %>  <!--pag 53 DAN_12
 
+
+<%= render 'layouts/header' %>   <!--2 pag 38 DAN13-->
+
+
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "sample app", '#', id: "logo" %> <!-- 1 Links to nowhere for now -->
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", '#' %></li>
+          <li><%= link_to "Help", '#' %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="container">
+
+
+<%= yield %>  <!--pag 53 DAN_12 -->
+
+
+
+
+<%= render 'layouts/footer' %>   <!--3 pag 38 DAN13-->
+
+
+</div>
 </body>
 </html>
